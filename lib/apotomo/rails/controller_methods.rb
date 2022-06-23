@@ -81,7 +81,11 @@ module Apotomo
       def url_for_event(type, options)
         options.reverse_merge!(:type => type)
 
-        apotomo_event_path(apotomo_request_processor.address_for(options))
+        controller_name_path + "?" + address_for_event(type, options).to_query
+      end
+
+      def controller_name_path
+        "/#{parent_controller.controller_path}/render_event_response"
       end
 
     protected
