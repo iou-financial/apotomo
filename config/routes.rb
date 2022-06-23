@@ -1,3 +1,4 @@
+# Source of this snippet https://stackoverflow.com/a/50178750/540852
 Rails.application.routes.draw do
   match ':controller/render_event_response', :via => :all, :to => proc { |env|
     route = env["action_dispatch.request.path_parameters"]
